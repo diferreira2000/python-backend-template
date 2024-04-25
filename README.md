@@ -33,8 +33,8 @@ Here are some possible use cases for this template:
 - pytest
 
 Note that this depends on a few other libraries. The idea is to manage some common Python code in your own libraries, so that they can be shared among multiple Python backend services.
-- https://github.com/alvinchow86/alvin-python-lib
-- https://github.com/alvinchow86/alvin-grpc-py
+- https://github.com/socialnet86/alvin-python-lib
+- https://github.com/socialnet86/alvin-grpc-py
 
 ## Background
 There are a few trends in recent years with backend architecture. One is that frontends tend to be built more as Single Page Apps, where the backend's role is mostly to provide APIs (in REST or GraphQL format) for the frontend to fetch data. Another trend is that organizations tend to move towards microservices architectures at some point, even if they start from a monolithic approach.
@@ -54,7 +54,7 @@ This template tries to encourage strong separation of concerns. For instance, AP
 Database models and helpers should be in `db`. Business logic is recommended to go into the `service` package.
 
 ### 64-bit IDs
-This template uses Postgres and SQLAlchemy, with 64-bit generated Snowflake/Instagram-style primary keys (courtesy of this library https://github.com/alvinchow86/sqlalchemy-postgres-bigint-id). These are much more futureproof than auto-incrementing 32-bit IDs, but have less overhead than 128-bit UUIDs.
+This template uses Postgres and SQLAlchemy, with 64-bit generated Snowflake/Instagram-style primary keys (courtesy of this library https://github.com/socialnet86/sqlalchemy-postgres-bigint-id). These are much more futureproof than auto-incrementing 32-bit IDs, but have less overhead than 128-bit UUIDs.
 
 ### Database Repository
 I'm using a "repository" pattern to provide a light-weight access layer on top of SQLAlchemy. It's sort of related to the repository pattern that's out there, but simplified with plain Python functions grouped in modules. The idea is to wrap most access to the database (queries, creation, deletion) in standalone functions. This ensures that that code is easily testable, and abstracts away ORM-specific details.
@@ -62,7 +62,7 @@ I'm using a "repository" pattern to provide a light-weight access layer on top o
 There is a folder called `db/repository` where these can live. I usually will create a simple Python module to wrap a model, (e.g. `db/repository/user.py`). You can add convenience imports in `db/repository/__init__.py` such as `from . import user as user_repo`. Then in application code do
 
 ```python
-from alvinchow_backend.db.repository import user_repo
+from socialNet_backend.db.repository import user_repo
 user = user_repo.get_user(123)
 ```
 
@@ -72,9 +72,9 @@ It can become cumbersome to make a separate "repo" for every model, I will usual
 Common utilities and helpers that may be useful for different services are put in a shared library (see below).
 
 ## How to Use
-This is not a framework but a template. You will want to rename a bunch of folders and names, but I have made this easy but calling them something unique like "alvinchow".
+This is not a framework but a template. You will want to rename a bunch of folders and names, but I have made this easy but calling them something unique like "socialnet".
 
-See https://github.com/alvinchow86/python-backend-template/wiki/How-to-Use for more detailed instructions on how to use this template.
+See https://github.com/socialnet86/python-backend-template/wiki/How-to-Use for more detailed instructions on how to use this template.
 
 ## Folder Structure
 
@@ -149,7 +149,7 @@ There is a Postgres test database, which is reset between tests, using nested tr
 To run tests, do `runtests.py` or `runtests`.
 
 ## Additional Documentation
-See the [repo wiki](https://github.com/alvinchow86/python-backend-template/wiki) for additional documentation
+See the [repo wiki](https://github.com/socialnet86/python-backend-template/wiki) for additional documentation
 
 ## CI Status
-[![<alvinchow86>](https://circleci.com/gh/alvinchow86/python-backend-template.svg?style=svg)](<https://app.circleci.com/pipelines/github/alvinchow86/python-backend-template>)
+[![<socialnet86>](https://circleci.com/gh/socialnet86/python-backend-template.svg?style=svg)](<https://app.circleci.com/pipelines/github/socialnet86/python-backend-template>)

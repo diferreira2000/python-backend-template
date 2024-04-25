@@ -15,7 +15,7 @@
             },
             {
                 "name": "fury",
-                "url": "https://pypi.fury.io/alvinchow86",
+                "url": "https://pypi.fury.io/socialnet86",
                 "verify_ssl": true
             }
         ]

@@ -1,8 +1,8 @@
 [run]
 omit =
-    alvinchow_backend/commands/*
-    alvinchow_backend/test/*
-    alvinchow_backend/api/grpc/protobuf*
-    alvinchow_backend/api/grpc/setup*.py
+    socialNet_backend/commands/*
+    socialNet_backend/test/*
+    socialNet_backend/api/grpc/protobuf*
+    socialNet_backend/api/grpc/setup*.py
     */test_*.py
     *version*.py

@@ -12,10 +12,10 @@ if [ -f /.dockerenv ]; then
     sleep 1
   done
 
-  if [ "$( psql -tAc "SELECT 1 FROM pg_database WHERE datname='alvinchow_backend'" )" != '1' ];
+  if [ "$( psql -tAc "SELECT 1 FROM pg_database WHERE datname='socialNet_backend'" )" != '1' ];
   then
-    echo "Database does not exist, creating 'alvinchow_backend'"
-    createdb alvinchow_backend
+    echo "Database does not exist, creating 'socialNet_backend'"
+    createdb socialNet_backend
     ./manage.py db reset --migrate
   fi
 fi

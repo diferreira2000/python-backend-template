@@ -3,8 +3,8 @@ exclude =
   venv
   .venv
   alembic
-  alvinchow_backend_protobuf
-  alvinchow_backend/api/grpc/alvinchow_backend_protobuf_async
+  socialNet_backend_protobuf
+  socialNet_backend/api/grpc/socialNet_backend_protobuf_async
   alvin-grpc-py
   alvin-python-lib
 

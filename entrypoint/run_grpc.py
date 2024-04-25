@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import argparse
 
-from alvinchow_backend.api.grpc import server
+from socialNet_backend.api.grpc import server
 
 
 def main():

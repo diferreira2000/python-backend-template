@@ -1,10 +1,10 @@
 import pytest
 
-from alvinchow_backend import app
-from alvinchow_backend.db import base
-from alvinchow_backend.db.session import get_session
-from alvinchow_backend.app import config
-from alvinchow_backend.lib.redis import get_redis_connection
+from socialNet_backend import app
+from socialNet_backend.db import base
+from socialNet_backend.db.session import get_session
+from socialNet_backend.app import config
+from socialNet_backend.lib.redis import get_redis_connection
 
 
 app.initialize()
@@ -91,7 +91,7 @@ def fast_password_hashing(mocker, request):
     from passlib.context import CryptContext
 
     fast_crypt_context = CryptContext(schemes=['md5_crypt'])
-    mocker.patch('alvinchow_backend.service.authentication.password.crypt_context', fast_crypt_context)
+    mocker.patch('socialNet_backend.service.authentication.password.crypt_context', fast_crypt_context)
 
 
 @pytest.fixture(autouse=True)

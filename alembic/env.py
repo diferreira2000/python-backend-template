@@ -2,9 +2,9 @@ from __future__ import with_statement
 from alembic import context
 from logging.config import fileConfig
 
-from alvinchow_backend import app
+from socialNet_backend import app
 app.initialize()
-from alvinchow_backend.db.base import Base, get_engine   # noqa # must do this after initialize()
+from socialNet_backend.db.base import Base, get_engine   # noqa # must do this after initialize()
 from sqlalchemy_bigint_id import migration    # noqa make sure custom hooks are registered
 
 
@@ -61,7 +61,7 @@ def run_migrations_online():
             connection=connection,
             target_metadata=target_metadata,
             process_revision_directives=writer,
-            user_module_prefix="alvinchow_backend.db.types.",
+            user_module_prefix="socialNet_backend.db.types.",
         )
 
         with context.begin_transaction():

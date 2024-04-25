@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 
 # gRPC
-alvinchow_backend/api/grpc/alvinchow_backend_protobuf
-alvinchow_backend_protobuf_async/
+socialNet_backend/api/grpc/socialNet_backend_protobuf
+socialNet_backend_protobuf_async/
 
 # sed backup thing
 *-E

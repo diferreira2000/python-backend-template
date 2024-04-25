@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    GIT_URL: "git@github.com:alvinchow86/python-backend-template.git"
-    DOCKER_REPO: "something.dkr.ecr.us-east-2.amazonaws.com/{% block docker_image%}alvinchow-backend{% endblock %}"
+    GIT_URL: "git@github.com:socialnet86/python-backend-template.git"
+    DOCKER_REPO: "something.dkr.ecr.us-east-2.amazonaws.com/{% block docker_image%}socialnet-backend{% endblock %}"
 
 phases:
   pre_build:

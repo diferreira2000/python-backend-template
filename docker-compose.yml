@@ -20,7 +20,7 @@ services:
     <<: *base
     ports:
       - 5000:80
-    container_name: alvinchow_backend_web
+    container_name: socialNet_backend_web
     command: /home/app/entrypoint/run-web-dev.sh
     environment:
       - PORT=80
@@ -29,7 +29,7 @@ services:
 
   grpc:
     <<: *base
-    container_name: alvinchow_backend_grpc
+    container_name: socialNet_backend_grpc
     command: /home/app/entrypoint/run-grpc-dev.sh
     ports:
       - 51051:50051
@@ -39,18 +39,18 @@ services:
 
   worker:
     <<: *base
-    container_name: alvinchow_backend_worker
+    container_name: socialNet_backend_worker
     command: /home/app/entrypoint/run-worker-dev.sh
     environment:
       - DEVELOP
 
   scheduler:
     <<: *base
-    container_name: alvinchow_backend_scheduler
+    container_name: socialNet_backend_scheduler
     command: /home/app/entrypoint/run_scheduler.py
 
   postgres:
-    container_name: alvinchow_backend_postgres
+    container_name: socialNet_backend_postgres
     image: postgres:12-alpine
     ports:
       - 6432:5432
@@ -58,12 +58,12 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=password
     volumes:
-      - ~/.postgres_data/alvinchow-backend:/var/lib/postgresql/data:delegated
+      - ~/.postgres_data/socialnet-backend:/var/lib/postgresql/data:delegated
     networks:
       - internal
 
   redis:
-    container_name: alvinchow_backend_redis
+    container_name: socialNet_backend_redis
     image: redis:6.0.4-alpine
     networks:
       - internal
@@ -72,5 +72,5 @@ services:
 networks:
   default:
     external:
-      name: alvinchow
+      name: socialnet
   internal:
